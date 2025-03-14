@@ -209,6 +209,44 @@ class DataPipeline:
             logger.error(f"Error converting excess returns to index: {str(e)}")
             raise
 
+    def visualize_data(self, data: pd.DataFrame = None, output_path: str = None, title: str = "Data Series Over Time"):
+        """
+        Visualize the data series and save as interactive HTML.
+        
+        Args:
+            data (pd.DataFrame, optional): Data to visualize. If None, uses the last processed data
+            output_path (str, optional): Path to save the HTML file. If None, saves to data_pipelines/data_visualization.html
+            title (str): Title for the visualization
+            
+        Returns:
+            str: Path to the saved HTML file
+            
+        Raises:
+            ValueError: If no data is available for visualization
+            Exception: If there's an error during visualization
+        """
+        try:
+            from data_pipelines.data_visualization import create_spread_plots
+            
+            # Use provided data or last processed data
+            df_to_plot = data if data is not None else self.data
+            
+            if df_to_plot is None:
+                raise ValueError("No data available for visualization. Please process data first.")
+            
+            # Set default output path if none provided
+            if output_path is None:
+                output_path = os.path.join(os.path.dirname(__file__), "data_visualization.html")
+                
+            # Create and save the plot
+            saved_path = create_spread_plots(df_to_plot, output_path, title)
+            logger.info(f"Visualization saved to: {saved_path}")
+            return saved_path
+            
+        except Exception as e:
+            logger.error(f"Error in data visualization: {str(e)}")
+            raise
+
     def process_data(self) -> pd.DataFrame:
         """Main method to fetch and process all data."""
         try:
@@ -367,6 +405,12 @@ if __name__ == "__main__":
         print("\nDataFrame Info:")
         print("=" * 80)
         data.info()
+        
+        # Visualize the data and save to HTML
+        print("\nCreating interactive visualization...")
+        viz_path = os.path.join(os.path.dirname(__file__), "data_visualization.html")
+        saved_path = pipeline.visualize_data(data=data, output_path=viz_path, title="Data Series Overview")
+        print(f"Visualization saved to: {saved_path}")
         
     except Exception as e:
         logger.error(f"Error in main execution: {str(e)}")
