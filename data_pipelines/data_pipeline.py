@@ -200,7 +200,7 @@ class DataPipeline:
                             prev_year_end = index_values.loc[last_date_of_year]
                     
                     # Fill any remaining NaN values using the specified fill method
-                    index_values = index_values.fillna(method=self.fill)
+                    index_values = index_values.ffill() if self.fill == 'ffill' else index_values.bfill()
                     result[f"{column}_index"] = index_values
             
             return result
@@ -279,16 +279,47 @@ class DataPipeline:
             raise
 
     def clean_data(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Clean known data issues."""
+        """
+        Clean known data issues and handle missing values.
+        
+        This method:
+        1. Handles known bad data points that need to be replaced
+        2. Drops any rows with missing values
+        3. Logs data completeness information
+        
+        Args:
+            df (pd.DataFrame): DataFrame to clean
+            
+        Returns:
+            pd.DataFrame: Cleaned DataFrame with no missing values
+        """
         try:
             cleaned_df = df.copy()
             
-            for date, info in self.bad_dates.items():
-                if date in cleaned_df.index and info['column'] in cleaned_df.columns:
-                    if info['action'] == 'use_previous':
+            # Log initial data state
+            initial_rows = len(cleaned_df)
+            initial_missing = cleaned_df.isnull().sum()
+            if initial_missing.any():
+                logger.info("Initial missing values:")
+                for col, count in initial_missing[initial_missing > 0].items():
+                    logger.info(f"  {col}: {count} missing values")
+        
+            # Handle known bad dates first
+            for date_key, info in self.bad_dates.items():
+                if info['action'] == 'use_previous':
+                    date = date_key.split('_')[0]
+                    if date in cleaned_df.index and info['column'] in cleaned_df.columns:
                         prev_value = cleaned_df.loc[cleaned_df.index < date, info['column']].iloc[-1]
                         cleaned_df.loc[date, info['column']] = prev_value
-                        logger.info(f"Cleaned bad data point for {info['column']} on {date}")
+                        logger.info(f"Replaced bad data point for {info['column']} on {date}")
+            
+            # Drop any rows with missing values
+            cleaned_df = cleaned_df.dropna()
+            final_rows = len(cleaned_df)
+            
+            if final_rows < initial_rows:
+                logger.info(f"Dropped {initial_rows - final_rows} rows with missing values")
+                logger.info(f"Final dataset has {final_rows} complete rows")
             
             return cleaned_df
         
@@ -322,7 +353,7 @@ class DataPipeline:
                     logger.info(f"Aligned data to start from first complete date: {first_complete_date}")
 
             if self.fill:
-                final_df = final_df.fillna(method=self.fill)
+                final_df = final_df.ffill() if self.fill == 'ffill' else final_df.bfill()
             
             return final_df
         
@@ -384,9 +415,10 @@ class DataPipeline:
 if __name__ == "__main__":
     # Example usage in interactive window
     try:
-        # Initialize DataPipeline with default settings
-        pipeline = DataPipeline()
-        print("DataPipeline initialized with default settings")
+        # Initialize DataPipeline with config file
+        config_path = os.path.join(project_root, "config", "data_pipeline_config.yaml")
+        pipeline = DataPipeline(config_path=config_path)
+        print("DataPipeline initialized with config from:", config_path)
         
         # Fetch and process data
         print("\nFetching and processing data...")
