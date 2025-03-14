@@ -1,0 +1,29 @@
+Start                                2002-10-31 00:00:00
+End                                  2025-02-27 00:00:00
+Period                                5902 days 00:00:00
+Start Value                                        100.0
+End Value                                     139.869888
+Total Return [%]                               39.869888
+Benchmark Return [%]                           34.388544
+Max Gross Exposure [%]                             100.0
+Total Fees Paid                                      0.0
+Max Drawdown [%]                                4.830855
+Max Drawdown Duration                  429 days 00:00:00
+Total Trades                                          60
+Total Closed Trades                                   60
+Total Open Trades                                      0
+Open Trade PnL                                       0.0
+Win Rate [%]                                   61.666667
+Best Trade [%]                                 10.729801
+Worst Trade [%]                                -1.564202
+Avg Winning Trade [%]                           1.344471
+Avg Losing Trade [%]                           -0.422532
+Avg Winning Trade Duration    80 days 12:58:22.702702703
+Avg Losing Trade Duration     34 days 12:31:18.260869565
+Profit Factor                                   5.105181
+Expectancy                                      0.664498
+Sharpe Ratio                                    2.018065
+Calmar Ratio                                    0.434041
+Omega Ratio                                      1.58546
+Sortino Ratio                                   3.316893
+dtype: object

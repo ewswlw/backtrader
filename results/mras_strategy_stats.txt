@@ -1,0 +1,53 @@
+Raw Portfolio Stats for MRAS Strategy:
+================================================================================
+Start                                2002-10-31 00:00:00
+End                                  2025-02-27 00:00:00
+Period                                5902 days 00:00:00
+Start Value                                        100.0
+End Value                                     130.941559
+Total Return [%]                               30.941559
+Benchmark Return [%]                           34.388544
+Max Gross Exposure [%]                             100.0
+Total Fees Paid                                      0.0
+Max Drawdown [%]                                1.776274
+Max Drawdown Duration                  389 days 00:00:00
+Total Trades                                          55
+Total Closed Trades                                   55
+Total Open Trades                                      0
+Open Trade PnL                                       0.0
+Win Rate [%]                                   74.545455
+Best Trade [%]                                  8.700784
+Worst Trade [%]                                -0.852659
+Avg Winning Trade [%]                           0.860491
+Avg Losing Trade [%]                            -0.30975
+Avg Winning Trade Duration    48 days 05:51:13.170731707
+Avg Losing Trade Duration     26 days 20:34:17.142857143
+Profit Factor                                   8.135141
+Expectancy                                      0.562574
+Sharpe Ratio                                    2.125446
+Calmar Ratio                                    0.946451
+Omega Ratio                                     1.901916
+Sortino Ratio                                   3.677241
+
+Raw Returns Stats for MRAS Strategy:
+================================================================================
+Start                        2002-10-31 00:00:00
+End                          2025-02-27 00:00:00
+Period                        5902 days 00:00:00
+Total Return [%]                       30.941559
+Benchmark Return [%]                   34.388544
+Annualized Return [%]                   1.681156
+Annualized Volatility [%]               0.785861
+Max Drawdown [%]                        1.776274
+Max Drawdown Duration          389 days 00:00:00
+Sharpe Ratio                            2.125446
+Calmar Ratio                            0.946451
+Omega Ratio                             1.901916
+Sortino Ratio                           3.677241
+Skew                                    2.324516
+Kurtosis                               57.955065
+Tail Ratio                              1.653826
+Common Sense Ratio                      1.681629
+Value at Risk                          -0.000312
+Alpha                                   0.012729
+Beta                                    0.219925

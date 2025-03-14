@@ -1,0 +1,53 @@
+Raw Portfolio Stats for Buy & Hold:
+================================================================================
+Start                         2002-10-31 00:00:00
+End                           2025-02-27 00:00:00
+Period                         5902 days 00:00:00
+Start Value                                 100.0
+End Value                              134.388544
+Total Return [%]                        34.388544
+Benchmark Return [%]                    34.388544
+Max Gross Exposure [%]                      100.0
+Total Fees Paid                               0.0
+Max Drawdown [%]                        15.481159
+Max Drawdown Duration          1035 days 00:00:00
+Total Trades                                    1
+Total Closed Trades                             0
+Total Open Trades                               1
+Open Trade PnL                          34.388544
+Win Rate [%]                                  NaN
+Best Trade [%]                                NaN
+Worst Trade [%]                               NaN
+Avg Winning Trade [%]                         NaN
+Avg Losing Trade [%]                          NaN
+Avg Winning Trade Duration                    NaT
+Avg Losing Trade Duration                     NaT
+Profit Factor                                 NaN
+Expectancy                                    NaN
+Sharpe Ratio                             1.044043
+Calmar Ratio                             0.119157
+Omega Ratio                              1.229312
+Sortino Ratio                            1.381408
+
+Raw Returns Stats for Buy & Hold:
+================================================================================
+Start                        2002-10-31 00:00:00
+End                          2025-02-27 00:00:00
+Period                        5902 days 00:00:00
+Total Return [%]                       34.388544
+Benchmark Return [%]                   34.388544
+Annualized Return [%]                   1.844684
+Annualized Volatility [%]               1.765765
+Max Drawdown [%]                       15.481159
+Max Drawdown Duration         1035 days 00:00:00
+Sharpe Ratio                            1.044043
+Calmar Ratio                            0.119157
+Omega Ratio                             1.229312
+Sortino Ratio                           1.381408
+Skew                                   -2.741126
+Kurtosis                               54.016236
+Tail Ratio                              1.018922
+Common Sense Ratio                      1.037718
+Value at Risk                          -0.001089
+Alpha                                        0.0
+Beta                                         1.0

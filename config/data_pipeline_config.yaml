@@ -1,0 +1,39 @@
+data_pipeline:
+  # Basic parameters
+  start_date: '2002-01-01'  # Start date for data fetching
+  end_date: null  # End date (null means current date)
+  periodicity: 'D'  # Data frequency: 'D' for daily, 'M' for monthly
+  align_start: true  # Whether to align data from the start date
+  fill: 'ffill'  # Fill method for missing values
+  start_date_align: 'yes'  # Whether to align start dates
+
+  # Mappings from Bloomberg tickers and fields to column names
+  mappings:
+    ohlc_mapping:
+      'I05510CA Index|INDEX_OAS_TSY_BP': 'cad_oas'
+      'LF98TRUU Index|INDEX_OAS_TSY_BP': 'us_hy_oas'
+      'LUACTRUU Index|INDEX_OAS_TSY_BP': 'us_ig_oas'
+      'SPTSX Index|PX_LAST': 'tsx'
+      'VIX Index|PX_LAST': 'vix'
+      'USYC3M30 Index|PX_LAST': 'us_3m_10y'
+      'BCMPUSGR Index|PX_LAST': 'us_growth_surprises'
+      'BCMPUSIF Index|PX_LAST': 'us_inflation_surprises'
+      'LEI YOY  Index|PX_LAST': 'us_lei_yoy'
+      '.HARDATA G Index|PX_LAST': 'us_hard_data_surprises'
+      'CGERGLOB Index|PX_LAST': 'us_equity_revisions'
+      '.ECONREGI G Index|PX_LAST': 'us_economic_regime'
+      
+    er_ytd_mapping:
+      'I05510CA Index|INDEX_EXCESS_RETURN_YTD': 'cad_ig_er'
+      'LF98TRUU Index|INDEX_EXCESS_RETURN_YTD': 'us_hy_er'
+      'LUACTRUU Index|INDEX_EXCESS_RETURN_YTD': 'us_ig_er'
+
+  # Dates with known data issues that need special handling
+  bad_dates:
+    '2005-11-15':
+      column: 'cad_oas'
+      action: 'use_previous'
+
+  # Output settings
+  output:
+    default_path: 'pulling_data/backtest_data.csv'  # Default output path

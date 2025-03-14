@@ -1,0 +1,398 @@
+
+================================================================================
+BACKTESTING FRAMEWORK INTEGRATED SYSTEM
+================================================================================
+
+This script integrates the raw_stats.py and strategy_comparison.py functionality
+It demonstrates the relationship between all components of the system
+
+================================================================================
+STEP 1: Running raw_stats.py to generate strategy statistics
+================================================================================
+
+================================================================================
+STEP 1: Running raw_stats.py to generate strategy statistics
+================================================================================
+
+
+Successfully loaded data with shape: (5902, 15)
+Date range: 2002-10-31 00:00:00 to 2025-02-27 00:00:00
+
+Analyzing target column: cad_ig_er_index
+
+=== Calculating Buy & Hold Benchmark Stats ===
+Detected frequency: None
+
+Raw Portfolio Stats for Buy & Hold:
+================================================================================
+Start                         2002-10-31 00:00:00
+End                           2025-02-27 00:00:00
+Period                         5902 days 00:00:00
+Start Value                                 100.0
+End Value                              134.388544
+Total Return [%]                        34.388544
+Benchmark Return [%]                    34.388544
+Max Gross Exposure [%]                      100.0
+Total Fees Paid                               0.0
+Max Drawdown [%]                        15.481159
+Max Drawdown Duration          1035 days 00:00:00
+Total Trades                                    1
+Total Closed Trades                             0
+Total Open Trades                               1
+Open Trade PnL                          34.388544
+Win Rate [%]                                  NaN
+Best Trade [%]                                NaN
+Worst Trade [%]                               NaN
+Avg Winning Trade [%]                         NaN
+Avg Losing Trade [%]                          NaN
+Avg Winning Trade Duration                    NaT
+Avg Losing Trade Duration                     NaT
+Profit Factor                                 NaN
+Expectancy                                    NaN
+Sharpe Ratio                             1.044043
+Calmar Ratio                             0.119157
+Omega Ratio                              1.229312
+Sortino Ratio                            1.381408
+Name: cad_ig_er_index, dtype: object
+
+Raw Returns Stats for Buy & Hold:
+================================================================================
+Start                        2002-10-31 00:00:00
+End                          2025-02-27 00:00:00
+Period                        5902 days 00:00:00
+Total Return [%]                       34.388544
+Benchmark Return [%]                   34.388544
+Annualized Return [%]                   1.844684
+Annualized Volatility [%]               1.765765
+Max Drawdown [%]                       15.481159
+Max Drawdown Duration         1035 days 00:00:00
+Sharpe Ratio                            1.044043
+Calmar Ratio                            0.119157
+Omega Ratio                             1.229312
+Sortino Ratio                           1.381408
+Skew                                   -2.741126
+Kurtosis                               54.016236
+Tail Ratio                              1.018922
+Common Sense Ratio                      1.037718
+Value at Risk                          -0.001089
+Alpha                                        0.0
+Beta                                         1.0
+Name: cad_ig_er_index, dtype: object
+
+=== Calculating Moving Average Strategy Stats ===
+Original signal count: 5902
+Original signal changes: 811
+Applying monthly rebalancing for MA strategy
+Original signals head:
+            signal
+Date              
+2002-10-31   False
+2002-11-01   False
+2002-11-04   False
+2002-11-05   False
+2002-11-06   False
+Monthly signals count: 269
+Monthly signals head:
+            signal
+Date              
+2002-10-31   False
+2002-11-30   False
+2002-12-31    True
+2003-01-31   False
+2003-02-28    True
+Resampled signals count: 5902
+Resampled signals head:
+            signal
+Date              
+2002-10-31   False
+2002-11-01   False
+2002-11-04   False
+2002-11-05   False
+2002-11-06   False
+Modified signal count: 5902
+Modified signal changes: 121
+Number of entries: 60
+Number of exits: 60
+
+Raw Portfolio Stats for MA Strategy:
+================================================================================
+Start                                2002-10-31 00:00:00
+End                                  2025-02-27 00:00:00
+Period                                5902 days 00:00:00
+Start Value                                        100.0
+End Value                                     139.869888
+Total Return [%]                               39.869888
+Benchmark Return [%]                           34.388544
+Max Gross Exposure [%]                             100.0
+Total Fees Paid                                      0.0
+Max Drawdown [%]                                4.830855
+Max Drawdown Duration                  429 days 00:00:00
+Total Trades                                          60
+Total Closed Trades                                   60
+Total Open Trades                                      0
+Open Trade PnL                                       0.0
+Win Rate [%]                                   61.666667
+Best Trade [%]                                 10.729801
+Worst Trade [%]                                -1.564202
+Avg Winning Trade [%]                           1.344471
+Avg Losing Trade [%]                           -0.422532
+Avg Winning Trade Duration    80 days 12:58:22.702702703
+Avg Losing Trade Duration     34 days 12:31:18.260869565
+Profit Factor                                   5.105181
+Expectancy                                      0.664498
+Sharpe Ratio                                    2.018065
+Calmar Ratio                                    0.434041
+Omega Ratio                                      1.58546
+Sortino Ratio                                   3.316893
+dtype: object
+
+Raw Returns Stats for MA Strategy:
+================================================================================
+Start                        2002-10-31 00:00:00
+End                          2025-02-27 00:00:00
+Period                        5902 days 00:00:00
+Total Return [%]                       39.869888
+Benchmark Return [%]                   34.388544
+Annualized Return [%]                    2.09679
+Annualized Volatility [%]               1.030927
+Max Drawdown [%]                        4.830855
+Max Drawdown Duration          429 days 00:00:00
+Sharpe Ratio                            2.018065
+Calmar Ratio                            0.434041
+Omega Ratio                              1.58546
+Sortino Ratio                           3.316893
+Skew                                    1.589372
+Kurtosis                               32.513404
+Tail Ratio                              1.244127
+Common Sense Ratio                      1.270214
+Value at Risk                            -0.0006
+Alpha                                   0.013899
+Beta                                    0.379771
+dtype: object
+
+=== Calculating HY Timing Strategy Stats ===
+Original signal count: 5902
+Original signal changes: 1193
+Applying monthly rebalancing for HY Timing strategy
+Original signals head:
+            signal
+Date              
+2002-10-31   False
+2002-11-01   False
+2002-11-04   False
+2002-11-05   False
+2002-11-06    True
+Monthly signals count: 269
+Monthly signals head:
+            signal
+Date              
+2002-10-31   False
+2002-11-30    True
+2002-12-31    True
+2003-01-31   False
+2003-02-28    True
+Resampled signals count: 5902
+Resampled signals head:
+            signal
+Date              
+2002-10-31   False
+2002-11-01   False
+2002-11-04   False
+2002-11-05   False
+2002-11-06   False
+Modified signal count: 5902
+Modified signal changes: 142
+Number of entries: 71
+Number of exits: 70
+
+Raw Portfolio Stats for HY Timing Strategy:
+================================================================================
+Start                                2002-10-31 00:00:00
+End                                  2025-02-27 00:00:00
+Period                                5902 days 00:00:00
+Start Value                                        100.0
+End Value                                     128.231674
+Total Return [%]                               28.231674
+Benchmark Return [%]                           34.388544
+Max Gross Exposure [%]                             100.0
+Total Fees Paid                                      0.0
+Max Drawdown [%]                                9.229954
+Max Drawdown Duration                  618 days 00:00:00
+Total Trades                                          71
+Total Closed Trades                                   70
+Total Open Trades                                      1
+Open Trade PnL                                 -0.078678
+Win Rate [%]                                   75.714286
+Best Trade [%]                                  8.700784
+Worst Trade [%]                                -2.802104
+Avg Winning Trade [%]                           0.740038
+Avg Losing Trade [%]                            -0.62373
+Avg Winning Trade Duration    47 days 11:46:24.905660377
+Avg Losing Trade Duration     38 days 14:07:03.529411764
+Profit Factor                                   3.677905
+Expectancy                                      0.404434
+Sharpe Ratio                                    1.373361
+Calmar Ratio                                    0.167903
+Omega Ratio                                     1.422276
+Sortino Ratio                                   2.069696
+dtype: object
+
+Raw Returns Stats for HY Timing Strategy:
+================================================================================
+Start                        2002-10-31 00:00:00
+End                          2025-02-27 00:00:00
+Period                        5902 days 00:00:00
+Total Return [%]                       28.231674
+Benchmark Return [%]                   34.388544
+Annualized Return [%]                   1.549737
+Annualized Volatility [%]               1.124397
+Max Drawdown [%]                        9.229954
+Max Drawdown Duration          618 days 00:00:00
+Sharpe Ratio                            1.373361
+Calmar Ratio                            0.167903
+Omega Ratio                             1.422276
+Sortino Ratio                           2.069696
+Skew                                    0.435764
+Kurtosis                               35.197257
+Tail Ratio                              1.279984
+Common Sense Ratio                       1.29982
+Value at Risk                          -0.000592
+Alpha                                   0.007534
+Beta                                    0.430503
+dtype: object
+
+=== Calculating MRAS Strategy Stats ===
+Original signal count: 5902
+Original signal changes: 723
+Applying monthly rebalancing for MRAS strategy
+Original signals head:
+            signal
+Date              
+2002-10-31   False
+2002-11-01   False
+2002-11-04   False
+2002-11-05   False
+2002-11-06   False
+Monthly signals count: 269
+Monthly signals head:
+            signal
+Date              
+2002-10-31   False
+2002-11-30    True
+2002-12-31   False
+2003-01-31   False
+2003-02-28   False
+Resampled signals count: 5902
+Resampled signals head:
+            signal
+Date              
+2002-10-31   False
+2002-11-01   False
+2002-11-04   False
+2002-11-05   False
+2002-11-06   False
+Modified signal count: 5902
+Modified signal changes: 111
+Number of entries: 55
+Number of exits: 55
+
+Raw Portfolio Stats for MRAS Strategy:
+================================================================================
+Start                                2002-10-31 00:00:00
+End                                  2025-02-27 00:00:00
+Period                                5902 days 00:00:00
+Start Value                                        100.0
+End Value                                     130.941559
+Total Return [%]                               30.941559
+Benchmark Return [%]                           34.388544
+Max Gross Exposure [%]                             100.0
+Total Fees Paid                                      0.0
+Max Drawdown [%]                                1.776274
+Max Drawdown Duration                  389 days 00:00:00
+Total Trades                                          55
+Total Closed Trades                                   55
+Total Open Trades                                      0
+Open Trade PnL                                       0.0
+Win Rate [%]                                   74.545455
+Best Trade [%]                                  8.700784
+Worst Trade [%]                                -0.852659
+Avg Winning Trade [%]                           0.860491
+Avg Losing Trade [%]                            -0.30975
+Avg Winning Trade Duration    48 days 05:51:13.170731707
+Avg Losing Trade Duration     26 days 20:34:17.142857143
+Profit Factor                                   8.135141
+Expectancy                                      0.562574
+Sharpe Ratio                                    2.125446
+Calmar Ratio                                    0.946451
+Omega Ratio                                     1.901916
+Sortino Ratio                                   3.677241
+dtype: object
+
+Raw Returns Stats for MRAS Strategy:
+================================================================================
+Start                        2002-10-31 00:00:00
+End                          2025-02-27 00:00:00
+Period                        5902 days 00:00:00
+Total Return [%]                       30.941559
+Benchmark Return [%]                   34.388544
+Annualized Return [%]                   1.681156
+Annualized Volatility [%]               0.785861
+Max Drawdown [%]                        1.776274
+Max Drawdown Duration          389 days 00:00:00
+Sharpe Ratio                            2.125446
+Calmar Ratio                            0.946451
+Omega Ratio                             1.901916
+Sortino Ratio                           3.677241
+Skew                                    2.324516
+Kurtosis                               57.955065
+Tail Ratio                              1.653826
+Common Sense Ratio                      1.681629
+Value at Risk                          -0.000312
+Alpha                                   0.012729
+Beta                                    0.219925
+dtype: object
+
+Saved all stats to c:\Users\Eddy\Documents\backtrader\results
+
+================================================================================
+STEP 2: Running strategy_comparison.py to compare strategies
+================================================================================
+
+Creating comparison tables...
+
+Returns Comparison:
+================================================================================
+                           Benchmark  MA Strategy  HY Timing       MRAS
+Total Return [%]           34.388544    39.869888  28.231674  30.941559
+Annualized Return [%]       1.844684     2.096790   1.549737   1.681156
+Annualized Volatility [%]   1.765765     1.030927   1.124397   0.785861
+Sharpe Ratio                1.044043     2.018065   1.373361   2.125446
+Max Drawdown [%]           15.481159     4.830855   9.229954   1.776274
+Calmar Ratio                0.119157     0.434041   0.167903   0.946451
+Sortino Ratio               1.381408     3.316893   2.069696   3.677241
+
+Stats Comparison:
+================================================================================
+                           Benchmark  MA Strategy  HY Timing       MRAS
+Total Return [%]           34.388544    39.869888  28.231674  30.941559
+Annualized Return [%]            NaN          NaN        NaN        NaN
+Annualized Volatility [%]        NaN          NaN        NaN        NaN
+Sharpe Ratio                1.044043     2.018065   1.373361   2.125446
+Max Drawdown [%]           15.481159     4.830855   9.229954   1.776274
+Calmar Ratio                0.119157     0.434041   0.167903   0.946451
+Sortino Ratio               1.381408     3.316893   2.069696   3.677241
+
+Creating visualizations...
+
+All comparisons saved to c:\Users\Eddy\Documents\backtrader\results
+
+================================================================================
+BACKTESTING COMPLETE
+================================================================================
+
+All statistics and comparisons have been generated in the /results directory
+
+The integration demonstrates how the whole system works together:
+1. raw_stats.py - Runs strategies and generates raw statistics
+2. strategy_comparison.py - Compares all strategies and creates visualizations
+3. run_strategies.py - Orchestrates the overall system

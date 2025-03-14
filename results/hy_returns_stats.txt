@@ -1,0 +1,21 @@
+Start                        2002-10-31 00:00:00
+End                          2025-02-27 00:00:00
+Period                        5902 days 00:00:00
+Total Return [%]                       28.231674
+Benchmark Return [%]                   34.388544
+Annualized Return [%]                   1.549737
+Annualized Volatility [%]               1.124397
+Max Drawdown [%]                        9.229954
+Max Drawdown Duration          618 days 00:00:00
+Sharpe Ratio                            1.373361
+Calmar Ratio                            0.167903
+Omega Ratio                             1.422276
+Sortino Ratio                           2.069696
+Skew                                    0.435764
+Kurtosis                               35.197257
+Tail Ratio                              1.279984
+Common Sense Ratio                       1.29982
+Value at Risk                          -0.000592
+Alpha                                   0.007534
+Beta                                    0.430503
+dtype: object
